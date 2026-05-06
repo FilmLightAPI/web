@@ -1,0 +1,121 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Fetch all markdown files in the software directory
+const softwarePosts = Object.values(
+	import.meta.glob("./software/*.md", { eager: true })
+);
+
+const categoryMap: Record<string, string> = {
+	"App Scripts": "scripts",
+	Shaders: "shaders",
+	"FLAPI Tools": "ai",
+};
+
+// Map the markdown files to our softwareOptions format
+const softwareOptions = softwarePosts.map((post: any) => ({
+	name: post.frontmatter.name,
+	description: post.frontmatter.description,
+	url: post.url,
+	icon: post.frontmatter.icon,
+	tag: post.frontmatter.category
+		? categoryMap[post.frontmatter.category]
+		: "",
+}));
+---
+
+<Layout>
+	<div class="page-header-title" style="margin-bottom: 16px;">
+		<img src="/fl-enhance.png" alt="fl-enhance logo" class="page-icon" />
+		<h1 class="page-title" style="margin-bottom: 0;">fl-enhance</h1>
+	</div>
+	<p class="page-description">
+		Scripts, shaders, and other enhancements for Baselight, Daylight, and
+		FilmLight API.
+	</p>
+
+	<div class="search-container">
+		<svg
+			class="search-icon"
+			width="20"
+			height="20"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2"
+		>
+			<circle cx="11" cy="11" r="8"></circle>
+			<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+		</svg>
+		<input
+			type="text"
+			id="searchInput"
+			placeholder="Search enhancements..."
+		/>
+	</div>
+
+	<div class="grid">
+		{
+			softwareOptions.map((software) => (
+				<a
+					class="card"
+					href={software.url}
+					data-tag={software.tag}
+					data-title={software.name.toLowerCase()}
+					data-desc={software.description.toLowerCase()}
+				>
+					<div class="card-icon-container">
+						{software.icon ? (
+							<img
+								src={software.icon}
+								alt={software.name}
+								class="card-icon"
+							/>
+						) : (
+							<div class="card-icon" />
+						)}
+					</div>
+					<div class="card-content">
+						<h3 class="card-title">{software.name}</h3>
+						<p class="card-desc">{software.description}</p>
+					</div>
+				</a>
+			))
+		}
+	</div>
+
+	<script>
+		function filterCards() {
+			const hash = window.location.hash.substring(1);
+			const searchInput = document.getElementById(
+				"searchInput"
+			) as HTMLInputElement;
+			const query = searchInput ? searchInput.value.toLowerCase() : "";
+			const cards = document.querySelectorAll(".card");
+
+			cards.forEach((card: any) => {
+				const tagMatch =
+					!hash || hash === "" || card.dataset.tag === hash;
+				const title = card.dataset.title || "";
+				const desc = card.dataset.desc || "";
+				const searchMatch =
+					!query || title.includes(query) || desc.includes(query);
+
+				if (tagMatch && searchMatch) {
+					card.style.display = "flex";
+				} else {
+					card.style.display = "none";
+				}
+			});
+		}
+
+		window.addEventListener("hashchange", filterCards);
+		document.addEventListener("DOMContentLoaded", () => {
+			filterCards();
+			const searchInput = document.getElementById("searchInput");
+			if (searchInput) {
+				searchInput.addEventListener("input", filterCards);
+			}
+		});
+	</script>
+</Layout>
