@@ -1,6 +1,9 @@
 # source repo
 enhancements/
 
+# builds
+dist/
+
 # generated types
 .astro/
 
