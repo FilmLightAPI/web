@@ -2,9 +2,9 @@
 layout: ../../layouts/Layout.astro
 name: PQ Clip
 description: Clip to specific Nit level in PQ.
-icon: /icons/pq-clip.png
+icon: /web/icons/pq-clip.png
 category: Shaders
-download: /downloads/pq-clip.zip
+download: /web/downloads/pq-clip.zip
 ---
 
 Clip to specific Nit level in PQ.

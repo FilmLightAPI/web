@@ -2,16 +2,16 @@
 layout: ../../layouts/Layout.astro
 name: Deadline
 description: Use Thinkbox Deadline to distribute renders across render nodes.
-icon: /icons/deadline.png
+icon: /web/icons/deadline.png
 category: App Scripts
-download: /downloads/deadline.zip
+download: /web/downloads/deadline.zip
 ---
 
 Use Thinkbox Deadline to distribute renders across render nodes.
 
 These scripts allow you to distribute Baselight and Daylight render tasks. They use FLAPI to submit jobs to the render queue on each worker machine. The workers must be configured as render nodes or have Baselight, Daylight, or bl-render open to process the local render queue.
 
-![Screenshot](/screenshots/deadline-1.jpg)
+![Screenshot](/web/screenshots/deadline-1.jpg)
 
 ## Installation
 

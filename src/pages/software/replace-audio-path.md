@@ -2,9 +2,9 @@
 layout: ../../layouts/Layout.astro
 name: Replace Audio Path
 description: Perform a find and replace on audio paths.
-icon: /icons/replace-audio-path.png
+icon: /web/icons/replace-audio-path.png
 category: App Scripts
-download: /downloads/replace-audio-path.zip
+download: /web/downloads/replace-audio-path.zip
 ---
 
 Perform a find and replace on audio paths.

@@ -2,9 +2,9 @@
 layout: ../../layouts/Layout.astro
 name: List Mattes Used
 description: Generate a list of EXR matte channels used in a scene.
-icon: /icons/list-mattes-used.png
+icon: /web/icons/list-mattes-used.png
 category: FLAPI Tools
-download: /downloads/list-mattes-used.zip
+download: /web/downloads/list-mattes-used.zip
 ---
 
 Generate a list of EXR matte channels used in a scene.

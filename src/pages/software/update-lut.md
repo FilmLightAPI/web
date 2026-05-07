@@ -2,9 +2,9 @@
 layout: ../../layouts/Layout.astro
 name: Update LUT
 description: Apply a LUT to all shots in a scene on a specific layer.
-icon: /icons/update-lut.png
+icon: /web/icons/update-lut.png
 category: App Scripts
-download: /downloads/update-lut.zip
+download: /web/downloads/update-lut.zip
 ---
 
 Apply a LUT to all shots in a scene on a specific layer.

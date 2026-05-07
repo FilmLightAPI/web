@@ -1,9 +1,9 @@
 ---
 const categories = [
-	{ name: "All", icon: "🏠", path: "/" },
-	{ name: "App Scripts", icon: "🖥️", path: "/#scripts" },
-	{ name: "Shaders", icon: "🎨", path: "/#shaders" },
-	{ name: "FLAPI Tools", icon: "🛠️", path: "/#ai" },
+	{ name: "All", icon: "🏠", path: "/web/" },
+	{ name: "App Scripts", icon: "🖥️", path: "/web/#scripts" },
+	{ name: "Shaders", icon: "🎨", path: "/web/#shaders" },
+	{ name: "FLAPI Tools", icon: "🛠️", path: "/web/#ai" },
 ];
 
 const { frontmatter } = Astro.props;
@@ -14,7 +14,7 @@ const { frontmatter } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/web/favicon.svg" />
 		<title>{frontmatter?.name || "fl-enhanced"}</title>
 	</head>
 	<body>
@@ -79,7 +79,7 @@ const { frontmatter } = Astro.props;
 						</div>
 						<div class="footer-links">
 							<div>
-								<a href="#">Github</a>
+								<a href="https://github.com/FilmLightAPI/enhancements">Github</a>
 								<a href="#">Submit an Enhancement</a>
 							</div>
 						</div>

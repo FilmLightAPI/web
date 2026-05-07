@@ -43,9 +43,9 @@ def generate_md(folder, sub_name, short_name):
             "layout: ../../layouts/Layout.astro",
             f"name: {bigName}",
             f"description: {description}",
-            f"icon: /icons/{short_name}.png",
+            f"icon: /web/icons/{short_name}.png",
             "category: " + folder,
-            f"download: /downloads/{short_name}.zip",
+            f"download: /web/downloads/{short_name}.zip",
             "---",
             "",
             description,
@@ -55,7 +55,7 @@ def generate_md(folder, sub_name, short_name):
         
         for line in src:
             if line.startswith("![Screenshot]"):
-                line = line[:14] + '/screenshots/' + line[14:]
+                line = line[:14] + '/web/screenshots/' + line[14:]
             dst.write(line)
 
 ## Copy icons and screenshots into Astro repository

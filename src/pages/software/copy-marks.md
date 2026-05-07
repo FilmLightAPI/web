@@ -2,14 +2,14 @@
 layout: ../../layouts/Layout.astro
 name: Copy Marks
 description: Copy Shot or Timeline marks from one scene to another.
-icon: /icons/copy-marks.png
+icon: /web/icons/copy-marks.png
 category: App Scripts
-download: /downloads/copy-marks.zip
+download: /web/downloads/copy-marks.zip
 ---
 
 Copy Shot or Timeline marks from one scene to another.
 
-![Screenshot](/screenshots/copy-marks-1.jpg)
+![Screenshot](/web/screenshots/copy-marks-1.jpg)
 
 ## How To Use
 

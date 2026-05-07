@@ -2,14 +2,14 @@
 layout: ../../layouts/Layout.astro
 name: EL Zone
 description: Generate a false-color image using the EL Zone System
-icon: /icons/el-zone.png
+icon: /web/icons/el-zone.png
 category: Shaders
-download: /downloads/el-zone.zip
+download: /web/downloads/el-zone.zip
 ---
 
 Generate a false-color image using the EL Zone System
 
-![Screenshot](/screenshots/screenshots-1.jpg)
+![Screenshot](/web/screenshots/screenshots-1.jpg)
 
 ## Installation
 
