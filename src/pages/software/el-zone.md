@@ -9,7 +9,7 @@ download: /web/downloads/el-zone.zip
 
 Generate a false-color image using the EL Zone System
 
-![Screenshot](/web/screenshots/screenshot-1.jpg)
+![Screenshot](/web/screenshots/el-zone-1.jpg)
 
 ## Installation
 

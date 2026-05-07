@@ -55,7 +55,7 @@ def generate_md(folder, sub_name, short_name):
         
         for line in src:
             if line.startswith("![Screenshot]"):
-                line = line[:14] + '/web/screenshots/' + line[14:]
+                line = f"![Screenshot](/web/screenshots/{short_name}-1.jpg)\n"
             dst.write(line)
 
 ## Copy icons and screenshots into Astro repository
