@@ -1,0 +1,111 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const frontmatter = {
+	name: "Submit an Enhancement",
+	description:
+		"Learn how to contribute to the FilmLight Enhancement directory.",
+};
+---
+
+<Layout frontmatter={frontmatter}>
+	<div class="submit-content">
+		<p>
+			If you have developed scripts, shaders, or tools that could benefit
+			the community, please share!
+		</p>
+
+		<h2>How to Contribute</h2>
+		<p>
+			To contribute, please submit a Pull Request to the GitHub
+			repository.
+		</p>
+
+		<ol>
+			<li>
+				<strong>Fork the Repository:</strong> Create a fork of the <a
+					href="https://github.com/FilmLightAPI/enhancements"
+					target="_blank">enhancements GitHub repository</a
+				>
+			</li>
+			<li>
+				<strong>Add Your Content:</strong> Create a new sub-folder with the
+				name of your enhancement. Inside that folder, you must include a
+				<strong>README.md</strong> file. You can optionally include a
+				<strong>icon.png</strong>
+				file for the icon on the main page. It should be a square PNG (e.g.
+				128 x 128 or 64 x 64 pixels)
+				<br /><br />
+				<strong>README.md</strong> format:
+				<ul>
+					<li>
+						The first line of the README should be a a first-level
+						heading with the name of your enhancemnt
+					</li>
+					<li>
+						The second line should be a short one-sentence
+						description that will also appear on the directory pages
+						(use 15 words or less)
+					</li>
+					<li>
+						Below that you can use any text. To include a
+						screenshot, name the file "screenshot-1.jpg" and refer
+						to it with:
+						<code>![Screenshot](screenshot-1.jpg)</code>
+					</li>
+				</ul>
+				sample:
+				<pre><code>
+# My Tool
+
+A helpful tool for colourists.
+
+![Screenshot](screenshot-1.jpg)
+
+## How to use
+
+Just select "Colourist Help" from the Scene menu.
+				</code></pre>
+			</li>
+			<li>
+				<strong>Submit a Pull Request:</strong> Once your changes are ready,
+				submit a Pull Request. We will review your submission and merge it
+				into the directory.
+			</li>
+		</ol>
+	</div>
+
+	<style>
+		.submit-content {
+			max-width: 800px;
+		}
+		h2 {
+			margin-top: 32px;
+			font-size: 24px;
+		}
+		ol {
+			margin: 24px 0;
+			padding-left: 20px;
+		}
+		li {
+			margin-bottom: 16px;
+		}
+		.github-cta {
+			margin-top: 32px;
+		}
+		pre {
+			background-color: var(--bg-secondary);
+			border: 1px solid var(--border-color);
+			border-radius: 8px;
+			padding: 16px;
+			margin: 16px 0;
+			overflow-x: auto;
+		}
+		code {
+			font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+				"Liberation Mono", "Courier New", monospace;
+			font-size: 14px;
+			color: var(--text-primary);
+		}
+	</style>
+</Layout>

@@ -22,6 +22,7 @@ def generate_zip(folder, short_name):
             check=True, cwd=folder)
     except subprocess.CalledProcessError:
         print(f"ERROR: Unable to generate zip file for *{folder}*")
+        global error_count
         error_count += 1
 
 ## Generate .md file used by Astro to build web page
