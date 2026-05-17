@@ -18,7 +18,7 @@ def generate_zip(folder, short_name):
         subprocess.run([
             "zip", "-r", zipPath,
             ".",
-            "-x", ".DS_Store", ".git*", "icon.png", "README.md", "screenshot-*" ],
+            "-x", ".DS_Store", ".git*", ".ruff_cache", "icon.png", "README.md", "screenshot-*" ],
             check=True, cwd=folder)
     except subprocess.CalledProcessError:
         print(f"ERROR: Unable to generate zip file for *{folder}*")
@@ -71,7 +71,7 @@ def process_folder(folder):
     folderPath = REPO_PATH + '/' + folder
     with os.scandir(folderPath) as enhancements:
         for enhancement in enhancements:
-            if enhancement.name == ".DS_Store":
+            if enhancement.name == ".DS_Store" or enhancement.name == ".ruff_cache":
                 continue
             print(enhancement.name)
             short_name = enhancement.name.lower().replace(" ", "-")
