@@ -7,6 +7,13 @@ const categories = [
 ];
 
 const { frontmatter } = Astro.props;
+
+let sourceUrl = null;
+if (Astro.url.pathname.includes("/software/")) {
+	const urlname = encodeURIComponent(frontmatter.name);
+	const categoryPath = encodeURIComponent(frontmatter.category);
+	sourceUrl = `https://github.com/FilmLightAPI/enhancements/tree/main/${categoryPath}/${urlname}`;
+}
 ---
 
 <!DOCTYPE html>
@@ -49,15 +56,22 @@ const { frontmatter } = Astro.props;
 										{frontmatter.name}
 									</h1>
 								</div>
-								{frontmatter.download && (
-									<a
-										href={frontmatter.download}
-										class="download-btn"
-										download
-									>
-										Download
-									</a>
-								)}
+								<div class="header-actions">
+									{frontmatter.download && (
+										<a
+											href={frontmatter.download}
+											class="download-btn"
+											download
+										>
+											Download
+										</a>
+									)}
+									{sourceUrl && (
+										<a href={sourceUrl} class="source-btn">
+											View Source
+										</a>
+									)}
+								</div>
 							</div>
 						)
 					}
@@ -247,6 +261,12 @@ const { frontmatter } = Astro.props;
 				gap: 12px;
 			}
 
+			.header-actions {
+				display: flex;
+				align-items: center;
+				gap: 16px;
+			}
+
 			.download-btn {
 				background-color: color-mix(
 					in srgb,
@@ -263,6 +283,22 @@ const { frontmatter } = Astro.props;
 
 			.download-btn:hover {
 				opacity: 0.8;
+			}
+
+			.source-btn {
+				background-color: transparent;
+				color: var(--link-color);
+				border: 1px solid var(--link-color);
+				padding: 7px 15px;
+				border-radius: 6px;
+				font-weight: 600;
+				font-size: 14px;
+				transition: all 0.2s;
+			}
+
+			.source-btn:hover {
+				background-color: var(--link-color);
+				color: var(--bg-primary);
 			}
 
 			.markdown-card {

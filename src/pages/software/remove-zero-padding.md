@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Layout.astro
-name: RemoveZeroPadding
+name: Remove Zero Padding
 description: Remove leading '0's from Scene and Take metadata.
 icon: /web/icons/remove-zero-padding.png
 category: App Scripts
