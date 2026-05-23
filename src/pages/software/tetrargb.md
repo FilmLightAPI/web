@@ -1,15 +1,15 @@
 ---
 layout: ../../layouts/Layout.astro
-name: TetraHSV
-description: Tetrahedral color transformation in HSV
-icon: /web/icons/tetrahsv.png
+name: TetraRGB
+description: Tetrahedral color transformation in RGB
+icon: /web/icons/tetrargb.png
 category: Shaders
-download: /web/downloads/tetrahsv.zip
+download: /web/downloads/tetrargb.zip
 ---
 
-Tetrahedral color transformation in HSV
+Tetrahedral color transformation in RGB
 
-Adjust Hue, Satruation, and Value of the "corners" of a colour volume while preserving neutrals. Based on methodology discussed by Steve Yedlin
+Adjust Red, Green, and Blue of the "corners" of a colour volume while preserving neutrals. Based on methodology discussed by Steve Yedlin
 in his [Display Prep Demo - Followup](http://www.yedlin.net/DisplayPrepDemo/DispPrepDemoFollowup.html) video (at 14:30).
 
 ## Installation

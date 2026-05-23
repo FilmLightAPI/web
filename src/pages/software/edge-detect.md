@@ -9,7 +9,7 @@ download: /web/downloads/edge-detect.zip
 
 Generate a matte that highlights the contours in an image
 
-It can be used for numerous effects, such as halation, blooming and adding or subtracting color fringing.
+It can be used for numerous effects such as halation, blooming, and adding or subtracting color fringing.
 
 ![Screenshot](/web/screenshots/edge-detect-1.jpg)
 

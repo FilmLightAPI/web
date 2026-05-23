@@ -18,7 +18,7 @@ def generate_zip(folder, short_name):
         subprocess.run([
             "zip", "-r", zipPath,
             ".",
-            "-x", ".DS_Store", ".git*", ".ruff_cache", "icon.png", "README.md", "screenshot-*" ],
+            "-x", ".*", "*.mp4", "icon.png", "README.md", "screenshot-*" ],
             check=True, cwd=folder)
     except subprocess.CalledProcessError:
         print(f"ERROR: Unable to generate zip file for *{folder}*")
@@ -56,7 +56,11 @@ def generate_md(folder, sub_name, short_name):
         
         for line in src:
             if line.startswith("![Screenshot]"):
-                line = f"![Screenshot](/web/screenshots/{short_name}-1.jpg)\n"
+                line = line.replace("screenshot-1.jpg", f"/web/screenshots/{short_name}-1.jpg")
+            elif line.startswith("[Video]"):
+                start = line.find('(') + 1
+                end = line.find(')')
+                line = '<video style="max-width: 100%; height: auto;" controls><source src="' + line[start:end] + '" type="video/mp4"></video>'
             dst.write(line)
 
 ## Copy icons and screenshots into Astro repository
