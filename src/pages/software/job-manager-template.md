@@ -1,13 +1,13 @@
 ---
 layout: ../../layouts/Layout.astro
 name: Job Manager Template
-description: Create a new job folder with sub-folders based on a template.
+description: Create a new job folder with sub-folders based on a template
 icon: /web/icons/job-manager-template.png
 category: App Scripts
 download: /web/downloads/job-manager-template.zip
 ---
 
-Create a new job folder with sub-folders based on a template.
+Create a new job folder with sub-folders based on a template
 
 ![Screenshot](/web/screenshots/job-manager-template-1.jpg)
 
