@@ -101,7 +101,7 @@ else:
         sys.exit()
 
 # Update descriptions, downloads, and graphics
-folders = ["App Scripts", "FLAPI Tools", "Shaders"];
+folders = ["App Scripts", "FLAPI Tools", "Shaders", "Flexi"];
 for folder in folders:
     process_folder(folder)
 
